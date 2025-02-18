@@ -1,4 +1,4 @@
-package com.example.dogimagegenerator.presentation
+package com.example.dogimagegenerator.presentation.screen
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -15,7 +15,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun MainScreen() {
+fun MainScreen(
+    navigateToGenerateScreen : () -> Unit,
+    navigateToRecentPhotosScreen : () -> Unit
+) {
 
 
     Column (
@@ -25,8 +28,12 @@ fun MainScreen() {
         ) {
 
 
+        Text(text = "Generate Dog image!!!")
+
+        Spacer(modifier = Modifier.height(80.dp))
+
         Button(
-            onClick = { /*TODO*/ },
+            onClick = { navigateToGenerateScreen()},
             colors = ButtonDefaults.buttonColors(
                 Color(66, 134, 244)
             )
@@ -37,7 +44,7 @@ fun MainScreen() {
         Spacer(modifier = Modifier.height(20.dp))
 
         Button(
-            onClick = { /*TODO*/ },
+            onClick = { navigateToRecentPhotosScreen() },
             colors = ButtonDefaults.buttonColors(
                 Color(66, 134, 244)
             )
