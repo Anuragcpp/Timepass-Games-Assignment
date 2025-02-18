@@ -28,7 +28,7 @@ fun MainScreen(
         ) {
 
 
-        Text(text = "Generate Dog image!!!")
+        Text(text = "Random Dog Generator!")
 
         Spacer(modifier = Modifier.height(80.dp))
 
@@ -38,7 +38,7 @@ fun MainScreen(
                 Color(66, 134, 244)
             )
         ) {
-            Text(text = "Generate Dog!")
+            Text(text = "Generate Dogs!")
         }
 
         Spacer(modifier = Modifier.height(20.dp))

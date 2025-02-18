@@ -80,7 +80,7 @@ fun MyRecentlyGeneratedImageScreen(
             onClick = { viewModel.clearCache() },
             colors = ButtonDefaults.buttonColors(Color(66, 134, 244))
         ) {
-            Text("Clear Dogs")
+            Text("Clear Dogs!")
         }
 
 

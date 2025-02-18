@@ -71,7 +71,7 @@ fun GenerateDogScreen( viewModel: DogImageViewModel = hiltViewModel()) {
             )
         ) {
 
-            Text(text = "Get Image")
+            Text(text = "Generate!")
 
         }
     }
