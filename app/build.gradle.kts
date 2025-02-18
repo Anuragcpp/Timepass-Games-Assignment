@@ -4,6 +4,7 @@ plugins {
 
     id("com.google.dagger.hilt.android")
     kotlin("kapt") version "1.9.0"
+    id("kotlin-kapt")
     id("kotlin-parcelize")
     id ("dagger.hilt.android.plugin")
 }
@@ -84,4 +85,19 @@ dependencies {
 
     //coil
     implementation("io.coil-kt:coil-compose:2.5.0")
+
+    //navigation
+    val nav_version = "2.8.7"
+    val lifecycle_version = "2.8.7"
+
+    implementation("androidx.navigation:navigation-compose:$nav_version")
+    // ViewModel
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
+
+    //room database
+    val room_version = "2.6.1"
+
+    implementation("androidx.room:room-runtime:$room_version")
+    implementation("androidx.room:room-ktx:$room_version")
+    kapt("androidx.room:room-compiler:2.6.1")
 }
