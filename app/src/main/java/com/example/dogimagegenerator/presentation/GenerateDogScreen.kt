@@ -1,5 +1,6 @@
 package com.example.dogimagegenerator.presentation
 
+import android.util.Log
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
@@ -31,6 +32,7 @@ fun GenerateDogScreen( viewModel: DogImageViewModel = hiltViewModel()) {
         Box(
             modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center
         ){
+            Log.d("Error", "Data -> ${result.error}")
             Text(text = result.error)
         }
     }

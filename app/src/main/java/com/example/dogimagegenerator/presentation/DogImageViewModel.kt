@@ -1,5 +1,6 @@
 package com.example.dogimagegenerator.presentation
 
+import android.util.Log
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
@@ -34,6 +35,7 @@ class DogImageViewModel @Inject constructor(private val getDogImageUsageCase: Ge
                 }
 
                 is Resource.Success -> {
+                    Log.d("MyURl","data -> ${it.data?.imageUrl}")
                     _image.value = ImageState(data = it.data )
                 }
             }
