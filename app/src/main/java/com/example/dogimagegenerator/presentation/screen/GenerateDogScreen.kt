@@ -17,6 +17,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.AsyncImage
@@ -56,7 +57,9 @@ fun GenerateDogScreen( viewModel: DogImageViewModel = hiltViewModel()) {
         AsyncImage(model = result.data?.imageUrl, contentDescription = "Dog Image", modifier = Modifier
             .fillMaxWidth()
             .height(280.dp)
-            .padding(vertical = 8.dp))
+            .padding(vertical = 8.dp),
+            contentScale = ContentScale.Crop
+            )
 
 
         Spacer(modifier = Modifier.height(20.dp))

@@ -2,6 +2,7 @@ package com.example.dogimagegenerator.presentation.screen
 
 import android.util.Log
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -18,7 +19,9 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.example.dogimagegenerator.presentation.DogImageViewModel
@@ -55,13 +58,18 @@ fun MyRecentlyGeneratedImageScreen(
 //                        .fillMaxWidth()
 //                        .height(300.dp)
 //                )
-                AsyncImage(
-                    model = dogImage.imageUrl,
-                    contentDescription = "Dog Image",
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(300.dp)
-                )
+                Box(modifier = Modifier.fillMaxWidth().height(300.dp),
+                    contentAlignment = Alignment.Center
+                    ){
+                    AsyncImage(
+                        model = dogImage.imageUrl,
+                        contentDescription = "Dog Image",
+                        modifier = Modifier
+                            .fillMaxSize(),
+                        contentScale = ContentScale.Crop
+                    )
+                }
+
             }
 
         }
